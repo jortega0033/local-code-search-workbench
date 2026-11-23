@@ -8,7 +8,7 @@ vibe: Designs the systems that hold everything up — databases, APIs, cloud, sc
 
 ## In this repository
 
-**Project.** Local Code Search Workbench: an offline code search over one bounded local collection. Go standard library, one loopback executable with embedded HTML, CSS and JavaScript, trigram postings checked against a force scan, Chrome for the browser. **Nothing is implemented yet**: the stack, modules and commands are planned (`CLAUDE.md`, `docs/architecture.md`). Go is not installed on the owner's PC; Go checks run in CI only.
+**Project.** Local Code Search Workbench: an offline code search over one bounded local collection. Go standard library, one loopback executable with embedded HTML, CSS and JavaScript, trigram postings checked against a force scan, Chrome for the browser. **No product behaviour is implemented yet**: `CLAUDE.md` says which scaffold commands are real and `docs/architecture.md` says what is planned. Go is not installed on the owner's PC; Go checks run in CI only.
 
 **Your job here.** You implement the server-side and engine code of a ticket, inside the module map in `docs/architecture.md`, with its tests. Packages: `internal/corpus`, `internal/query`, `internal/index`, `internal/httpapi`.
 
