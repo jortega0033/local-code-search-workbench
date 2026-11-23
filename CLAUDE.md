@@ -4,9 +4,9 @@ Working instructions for this repository. Read this file first, then the documen
 
 ## What this is
 
-A read-only search tool for a developer with a local copy of a codebase: build a bounded snapshot, search it with a literal or a regular expression, filter by path and language, and read exact highlights in context. Go standard library only, `127.0.0.1` only, browser assets embedded, every indexed result checkable against a full scan.
+A read-only search tool for a developer with a local copy of a codebase: build a bounded snapshot, search it with a literal or a regular expression, filter by path and language, and read exact highlights in context. Go standard library only, loopback only, browser assets embedded, every indexed result checkable against a full scan.
 
-**Nothing is implemented yet.** The repository holds the plan, the delivery tooling and the backlog in epic #1. Commands marked planned below do not work yet. Do not describe a planned thing as working, and do not claim a passing baseline: there is none.
+**Only the scaffold exists, with no product behaviour.** The repository holds the plan, the delivery tooling, the backlog in epic #1 and a runnable Go skeleton (module, packages, smoke tests, CI). `generate`, `serve` and `verify` are stubs that exit non-zero. Commands marked planned below do not work yet. Do not describe a planned thing as working, and do not claim a passing baseline: there is none.
 
 ## Sources of truth
 
@@ -19,7 +19,7 @@ A read-only search tool for a developer with a local copy of a codebase: build a
 | Project subagents, origin and local changes | [.claude/agency-agents/README.md](.claude/agency-agents/README.md) |
 | Ticket workflow and the step at which each role runs | [.claude/skills/implement-ticket/SKILL.md](.claude/skills/implement-ticket/SKILL.md), section "Agent roles" below |
 | How a ticket goes from the queue to a ready pull request, who may do what | "Delivery workflow" below |
-| UI and copy rules | [docs/ui-quality.md](docs/ui-quality.md) |
+| UI and copy rules, design tokens | [docs/ui-quality.md](docs/ui-quality.md), [docs/design-tokens.md](docs/design-tokens.md) |
 | Decisions the owner made, with dates | [docs/owner-decisions.md](docs/owner-decisions.md) |
 
 The plan wins for product design; the epic and tickets win for order and scope. A ticket that changes a contract fixes the plan in the same pull request.
@@ -40,10 +40,10 @@ Go is not installed on the owner's PC and nothing is installed globally. **Go ch
 
 | Purpose | Command | Status |
 |---|---|---|
-| Build | `go build -o codesearch ./cmd/codesearch` | planned: real with the scaffold |
-| Format check (empty output is good) | `gofmt -l .` | planned: real with the scaffold |
-| Static check | `go vet ./...` | planned: real with the scaffold |
-| Tests | `go test ./...` | planned: real with the scaffold |
+| Build | `go build -o codesearch ./cmd/codesearch` | real (scaffold), verified in CI only |
+| Format check (empty output is good) | `gofmt -l .` | real (scaffold), verified in CI only |
+| Static check | `go vet ./...` | real (scaffold), verified in CI only |
+| Tests | `go test ./...` | real (scaffold), verified in CI only |
 | Generate the corpus | `./codesearch generate --seed 1 --out ./corpus` | planned: #2 |
 | Run the app | `./codesearch serve --root ./corpus` | planned: #5 |
 | Parity and timing report | `./codesearch verify` | planned: #7 |
@@ -121,7 +121,7 @@ How a ticket reaches the owner. Each piece is described in its own file; this pa
 - **Pull request:** [`.github/pull_request_template.md`](.github/pull_request_template.md). Tickets use [`.github/ISSUE_TEMPLATE/implementation-ticket.md`](.github/ISSUE_TEMPLATE/implementation-ticket.md).
 - **Labels:** `status:ready`, `status:blocked`, `status:in-progress`, `needs-decision`, `tracking` (parent container, never worked; its sub-issues are the work items).
 - **Changelog:** every ticket pull request adds one line under Unreleased in [CHANGELOG.md](CHANGELOG.md).
-- **UI and copy:** [docs/ui-quality.md](docs/ui-quality.md); the `ui-ux-pro-max` and `unslop` skills are in `.claude/skills/`.
+- **UI and copy:** [docs/ui-quality.md](docs/ui-quality.md); the `ui-ux-pro-max` and `unslop` skills are in `.claude/skills/`. Colours come from the shared design tokens in `web/tokens.css` ([docs/design-tokens.md](docs/design-tokens.md)); new UI adds no colour literals.
 - **Decisions:** [docs/owner-decisions.md](docs/owner-decisions.md). Security reports: [SECURITY.md](SECURITY.md).
 - **Merge and release:** only the owner merges and releases ([docs/RELEASING.md](docs/RELEASING.md)). An agent stops at a ready pull request.
 
