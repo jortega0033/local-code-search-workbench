@@ -6,7 +6,7 @@ Working instructions for this repository. Read this file first, then the documen
 
 A read-only search tool for a developer with a local copy of a codebase: build a bounded snapshot, search it with a literal or a regular expression, filter by path and language, and read exact highlights in context. Go standard library only, `127.0.0.1` only, browser assets embedded, every indexed result checkable against a full scan.
 
-**Nothing is implemented yet.** The repository holds the plan, the delivery tooling and the backlog in epic #1. Commands marked planned below do not work yet. Do not describe a planned thing as working, and do not claim a passing baseline: there is none.
+**Only the scaffold exists, with no product behaviour.** The repository holds the plan, the delivery tooling, the backlog in epic #1 and a runnable Go skeleton (module, packages, smoke tests, CI). `generate`, `serve` and `verify` are stubs that exit non-zero. Commands marked planned below do not work yet. Do not describe a planned thing as working, and do not claim a passing baseline: there is none.
 
 ## Sources of truth
 
@@ -40,10 +40,10 @@ Go is not installed on the owner's PC and nothing is installed globally. **Go ch
 
 | Purpose | Command | Status |
 |---|---|---|
-| Build | `go build -o codesearch ./cmd/codesearch` | planned: real with the scaffold |
-| Format check (empty output is good) | `gofmt -l .` | planned: real with the scaffold |
-| Static check | `go vet ./...` | planned: real with the scaffold |
-| Tests | `go test ./...` | planned: real with the scaffold |
+| Build | `go build -o codesearch ./cmd/codesearch` | real (scaffold), verified in CI only |
+| Format check (empty output is good) | `gofmt -l .` | real (scaffold), verified in CI only |
+| Static check | `go vet ./...` | real (scaffold), verified in CI only |
+| Tests | `go test ./...` | real (scaffold), verified in CI only |
 | Generate the corpus | `./codesearch generate --seed 1 --out ./corpus` | planned: #2 |
 | Run the app | `./codesearch serve --root ./corpus` | planned: #5 |
 | Parity and timing report | `./codesearch verify` | planned: #7 |

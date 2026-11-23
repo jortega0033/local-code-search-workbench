@@ -1,6 +1,6 @@
 # Implementer map
 
-Status: **planned, not implemented.** This page maps the boundaries that [PROJECT-PLAN.md](PROJECT-PLAN.md) requires onto a module layout so that parallel tickets do not collide. It adds no requirement; the plan wins where they differ. The names are the orchestrator's proposal, fixed by the scaffold; a ticket that changes one corrects this page in the same pull request.
+Status: **scaffold only, no product behaviour.** The packages below exist as documented empty packages with smoke tests; every rule and algorithm is planned. This page maps the boundaries that [PROJECT-PLAN.md](PROJECT-PLAN.md) requires onto a module layout so that parallel tickets do not collide. It adds no requirement; the plan wins where they differ. The names are the orchestrator's proposal, fixed by the scaffold; a ticket that changes one corrects this page in the same pull request.
 
 ## Planned module map
 
@@ -26,4 +26,4 @@ Parallel tickets rely on these shapes. A ticket that changes a frozen shape upda
 
 ## What is verified where
 
-Go is verified in CI only (see [CLAUDE.md](../CLAUDE.md)), on Linux, where symlink, FIFO and GNU grep cases can run. Manual browser steps are owner checks in Chrome.
+Go is verified in CI only (see [CLAUDE.md](../CLAUDE.md)), on Linux, where symlink, FIFO and GNU grep cases can run. Windows runs the same steps as a build and portability check only. Manual browser steps are owner checks in Chrome.

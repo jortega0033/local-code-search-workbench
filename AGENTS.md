@@ -4,9 +4,11 @@ The full repository instructions are in [CLAUDE.md](CLAUDE.md). This file repeat
 
 ## Status
 
-Nothing is implemented. The repository holds the plan (`docs/PROJECT-PLAN.md`), the delivery tooling and the backlog (epic #1). Go is not installed on the owner's PC; Go checks run in CI only.
+Only the scaffold exists, with no product behaviour: a runnable Go skeleton with smoke tests and CI. The repository also holds the plan (`docs/PROJECT-PLAN.md`), the delivery tooling and the backlog (epic #1). Go is not installed on the owner's PC; Go checks run in CI only.
 
-## Commands (planned; the scaffold makes the first ones real)
+## Commands
+
+The first four are real (scaffold), verified in CI only; nothing was run locally. `generate` (#2), `serve` (#5) and `verify` (#7) are planned: the scaffold only has stubs that exit non-zero.
 
 ```
 go build -o codesearch ./cmd/codesearch
