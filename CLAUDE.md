@@ -4,7 +4,7 @@ Working instructions for this repository. Read this file first, then the documen
 
 ## What this is
 
-A read-only search tool for a developer with a local copy of a codebase: build a bounded snapshot, search it with a literal or a regular expression, filter by path and language, and read exact highlights in context. Go standard library only, `127.0.0.1` only, browser assets embedded, every indexed result checkable against a full scan.
+A read-only search tool for a developer with a local copy of a codebase: build a bounded snapshot, search it with a literal or a regular expression, filter by path and language, and read exact highlights in context. Go standard library only, loopback only, browser assets embedded, every indexed result checkable against a full scan.
 
 **Only the scaffold exists, with no product behaviour.** The repository holds the plan, the delivery tooling, the backlog in epic #1 and a runnable Go skeleton (module, packages, smoke tests, CI). `generate`, `serve` and `verify` are stubs that exit non-zero. Commands marked planned below do not work yet. Do not describe a planned thing as working, and do not claim a passing baseline: there is none.
 

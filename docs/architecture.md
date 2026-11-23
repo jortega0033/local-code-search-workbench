@@ -1,6 +1,6 @@
 # Implementer map
 
-Status: **scaffold only, no product behaviour.** The packages below exist as documented empty packages with smoke tests; every rule and algorithm is planned. This page maps the boundaries that [PROJECT-PLAN.md](PROJECT-PLAN.md) requires onto a module layout so that parallel tickets do not collide. It adds no requirement; the plan wins where they differ. The names are the orchestrator's proposal, fixed by the scaffold; a ticket that changes one corrects this page in the same pull request.
+Status: **scaffold only, no product behaviour.** The packages below exist as documented empty packages with smoke tests, and `cmd/codesearch` prints help and version and has stubs; every rule and algorithm is planned. This page maps the boundaries that [PROJECT-PLAN.md](PROJECT-PLAN.md) requires onto a module layout so that parallel tickets do not collide. It adds no requirement; the plan wins where they differ. The names are the orchestrator's proposal, fixed by the scaffold; a ticket that changes one corrects this page in the same pull request.
 
 ## Planned module map
 
@@ -14,7 +14,7 @@ Status: **scaffold only, no product behaviour.** The packages below exist as doc
 | Browser assets | `web/ (embedded)` | Query, filters, results, context, status | #6 |
 | Verification | `internal/verify` | 60-query matrix, parity, grep comparison, timing report | #7 |
 
-Dependency direction: `httpapi` depends on `query`, `index` and `corpus`; `index` and `query` on `corpus`, never on each other; `verify` on all of them. `corpus` imports nothing from the module.
+Dependency direction: `cmd/codesearch` wires `corpus`, `httpapi` and `verify`; `httpapi` depends on `query`, `index`, `corpus` and, for the embedded assets, `web`; `index` and `query` on `corpus`, never on each other; `verify` on all of them. `corpus` and `web` import nothing from the module.
 
 ## Freeze points
 

@@ -29,6 +29,7 @@ The plan leaves these open. Each is a recommendation by the orchestrator, adopte
 |---|---|---|
 | #2 | Go version | `go 1.26` in `go.mod` (the plan asks for 1.24 or later); CI installs that version. |
 | #2 | Module path and layout | `github.com/jortega0033/local-code-search-workbench`, layout in `docs/architecture.md`. |
+| #2 | Go job on Windows | The `go` CI job also runs on Windows as a build and portability check (it adds to entry 8); Linux is the platform for symlink, FIFO and GNU grep checks. |
 | #2 | Language map | By extension: Go, Python, JavaScript, TypeScript, Java, C, C++, Rust, HTML, CSS, JSON, Markdown, text. Other extensions are searchable as `other`. |
 | #2 | Generated folders | `node_modules`, `vendor`, `dist`, `build`, `target`, `__pycache__`, at any depth. |
 | #2 | Fixtures | The tiny fixture is written by the test or the generator as exact bytes, so Git line-ending settings cannot change it. |
