@@ -9,3 +9,7 @@ Implementation is planned. The scope, architecture and acceptance criteria are i
 - [Implementation backlog and epic](https://github.com/jortega0033/local-code-search-workbench/issues)
 
 Estimated implementation and verification effort is 17–25 engineering hours.
+
+## License
+
+[MIT](LICENSE) © 2026 Jake Ortega.
