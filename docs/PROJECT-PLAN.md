@@ -1,5 +1,7 @@
 # Local Code Search Workbench
 
+> This document specifies phase 1 of the program in [#39](https://github.com/jortega0033/local-code-search-workbench/issues/39). Hour figures in it are early estimates for that phase; its open tickets add up to 72 to 100 hours (2026-11-24). Work that it defers is planned in the later phases only where the program names it.
+
 ## Product requirements
 
 A developer with a local copy of a codebase can find matching lines across the collection, narrow them by language or path and inspect the exact matches in context. Chrome shows the query, indexed and skipped file counts, search strategy and whether results are complete. Opening a result shows neighboring lines from the same indexed snapshot. The project starts with an original synthetic corpus.

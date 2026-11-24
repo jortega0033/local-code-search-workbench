@@ -39,3 +39,15 @@ The plan leaves these open. Each is a recommendation by the orchestrator, adopte
 | #7 | Verification command | `./codesearch verify` prints one line per check and exits non-zero on the first failure; CI runs it on Linux. Timings are recorded and never asserted. |
 | all | Owner checks | Manual browser steps run in Chrome by the owner. |
 | none | Licence | MIT, added by the owner on 2026-11-23 (`LICENSE`). No ticket changes it. |
+
+## Program decisions (owner, 2026-11-24)
+
+The owner accepted the goal and each suggestion below. They apply from the phase they name; the rules of `CLAUDE.md` hold for phase 1 as written.
+
+| Decision | Implemented in |
+|---|---|
+| The repository has a program goal above phase 1: a local code intelligence engine, in six phases. | Program issue #39 |
+| Compilers act as judges only. Suggested: they run on generated or licence-clean sources and are never part of the product. | Program issue #39 |
+| "Go standard library only" stays, and Go's own `regexp` becomes a judge in phase 3 and leaves the product. | Program issue #39 |
+| Git history is read from disk. Suggested: the product never calls Git. | Program issue #39 |
+| Today's tool is read-only. Suggested: rewrite in phase 4 writes only after a preview and a separate confirm. | Program issue #39 |
