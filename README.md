@@ -8,7 +8,7 @@ Only the scaffold exists (a Go module with empty packages, smoke tests and CI); 
 - [Technical design](docs/PROJECT-PLAN.md#technical-design)
 - [Implementation backlog and epic](https://github.com/jortega0033/local-code-search-workbench/issues)
 
-Estimated implementation and verification effort is 17–25 engineering hours.
+The first plan of phase 1 said 17–25 engineering hours. Its open tickets, with tests and review, add up to 72 to 100 hours; the whole program is larger and is described below. All figures are estimates.
 
 ## Program goal
 
